@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Terminal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <!-- TELA DE INTRO -->
+  <div id="intro-screen" class="intro-screen">
+    <div class="intro-text" id="intro-text"></div>
+  </div>
+
+  <!-- TERMINAL (Começa escondido) -->
+  <div class="terminal escondido" id="main-terminal">
+    <div class="terminal-header">
+      <span>Administrator: C:\Windows\system32\cmd.exe</span>
+      <span class="status">● CONNECTED</span>
+    </div>
+    
+    <div class="terminal-body" id="terminal-body">
+      <p class="txt-cinza">Microsoft Windows [Version 10.0.19045.3803]</p>
+      <p class="txt-cinza">(c) Microsoft Corporation. All rights reserved.</p>
+      <br>
+      <p>Type <span class="highlight">'help'</span> to see available commands.</p>
+      <br>
+      <p class="prompt-line">
+        <span class="prompt">C:\Users\root&gt;</span>
+        <input type="text" id="terminal-input" autocomplete="off" autofocus />
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

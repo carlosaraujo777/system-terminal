@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff; /* Texto branco */
+  font-family: "Consolas", "Courier New", monospace;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.terminal {
+  width: 90%;
+  max-width: 900px;
+  height: 80vh;
+  background-color: #000000;
+  border: 1px solid #333333; /* Borda cinza escuro */
+  border-radius: 4px; /* Menos arredondado, mais sério */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05); /* Brilho branco bem sutil */
+}
+
+.terminal-header {
+  background-color: #111111;
+  padding: 10px 15px;
+  border-bottom: 1px solid #333333;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
+
+.terminal-header .status {
+  color: #ffffff;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Barra de rolagem cinza */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.terminal-body p {
+  margin-bottom: 8px;
+  white-space: pre-wrap;
+}
+
+.highlight {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.prompt-line {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.prompt {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: #ffffff;
+}
+
+/* Classes de cores para o JS */
+.txt-azul { color: #5bc0de; } /* Ciano (tipo cmd de admin) */
+.txt-vermelho { color: #d9534f; } /* Vermelho (erro) */
+.txt-cinza { color: #aaaaaa; } /* Cinza (comandos antigos) */
+/* ... (mantenha o resto do seu CSS original) ... */
+
+/* Tela de Intro */
+.intro-screen {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: "Consolas", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.intro-text {
+  font-size: 1.5rem;
+  white-space: pre-wrap;
+  text-align: left;
+  width: 80%;
+  max-width: 800px;
+}
+
+/* Cursor piscando na intro */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.5rem;
+  background-color: #fff;
+  animation: piscar 0.8s infinite;
+  vertical-align: middle;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Classe pra esconder elementos */
+.escondido {
+  display: none !important;
+}
